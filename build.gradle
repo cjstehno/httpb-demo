@@ -1,0 +1,30 @@
+
+plugins {
+    id 'groovy'
+    id 'application'
+}
+
+version = "0.0.1"
+group = "com.stehno"
+
+mainClassName = 'server.RestServer'
+
+sourceCompatibility = 8
+targetCompatibility = 8
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+dependencies {
+    compile "org.codehaus.groovy:groovy-all:2.4.6"
+    compile 'ch.qos.logback:logback-classic:1.1.7'
+    compile 'com.sparkjava:spark-core:2.5'
+
+    compile 'org.codehaus.groovy.modules:http-builder-ng:0.10.0'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "3.0"
+}
